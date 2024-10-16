@@ -7,17 +7,24 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
 
-        String fileName = "titanic-data-100 (2).csv"; // file should be in the project folder (below pom.xml)
+        String fileName = "titanic-data-100.csv"; // file should be in the project folder (below pom.xml)
 
         ArrayList<Passenger> passengerList= new ArrayList<>();
 
         loadPassengerDataFromFile( passengerList, fileName);
 
-        displayAllPassengers( passengerList );
+        //displayAllPassengers( passengerList );
 
         // Assignment: Implement and test the following methods
 
 //        getPassengerNames();
+        System.out.println("1:");
+        String[] allNames = getpassengernames(passengerList);
+        for (int i=0; i<allNames.length; i++)
+        {
+            System.out.println(allNames[i]);
+        }
+
 //        getPassengersContainingNames();
 //        getPassengersOlderThan();
 //        countPassengersByGender();
@@ -115,13 +122,13 @@ public class Main {
         }
     }
 
-    public static String[] getpassengernames()
+    public static String[] getpassengernames(ArrayList<Passenger> passengerList)
     {
-        String[] passengernames = new String[1000];
-        while(fileName.hasNext){
-
-    }
-
-        return
+        String[] names = new String[passengerList.size()];
+        for (int i=0; i< passengerList.size(); i++)
+        {
+            names[i] = passengerList.get(i).getName();
+        }
+        return names;
     }
 }
