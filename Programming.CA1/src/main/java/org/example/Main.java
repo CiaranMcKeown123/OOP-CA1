@@ -3,6 +3,7 @@ package org.example;
 import java.awt.*;
 import java.io. * ;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class Main {
@@ -20,11 +21,7 @@ public class Main {
 
 //        getPassengerNames();
         System.out.println("1:");
-        String[] allNames = getpassengernames(passengerList);
-        for (int i=0; i<allNames.length; i++)
-        {
-            System.out.println(allNames[i]);
-        }
+        System.out.println(Arrays.toString(getpassengernames(passengerList)));
 
 //        getPassengersContainingNames();
         System.out.println("2:");
@@ -46,6 +43,10 @@ public class Main {
         System.out.println(sumFares(passengerList));
 
 //        maleSurvivors();
+        System.out.println("6:");
+        System.out.println(Arrays.toString(maleSurvivors(passengerList)));
+
+
 //        ticketOwner();
 //        averageAge();
 //        getPassengersByTicketClass();
@@ -200,5 +201,25 @@ public class Main {
         }
 
         return sum;
+    }
+
+    public static String[] maleSurvivors(ArrayList<Passenger> passengerList)
+    {
+        ArrayList<String> maleSurvivorsList = new ArrayList<>();
+
+        for (int i=0; i<passengerList.size(); i++)
+        {
+            if(passengerList.get(i).getSurvived() == 1 && passengerList.get(i).getGender().equalsIgnoreCase("male"))
+            {
+                maleSurvivorsList.add(passengerList.get(i).getName());
+            }
+        }
+
+        String[] maleSurvivors = new String[maleSurvivorsList.size()];
+        for (int i=0; i<maleSurvivorsList.size(); i++)
+        {
+            maleSurvivors[i] = maleSurvivorsList.get(i);
+        }
+        return maleSurvivors;
     }
 }
