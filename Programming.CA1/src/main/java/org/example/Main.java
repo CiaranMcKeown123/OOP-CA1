@@ -1,5 +1,6 @@
 package org.example;
 
+import java.awt.*;
 import java.io. * ;
 import java.util.ArrayList;
 import java.util.Scanner;
@@ -29,7 +30,11 @@ public class Main {
         System.out.println("2:");
         String targetName ="Rogers";
         System.out.println(getNameContaining(passengerList,targetName));
+
 //        getPassengersOlderThan();
+        System.out.println("3:");
+        int age=45;
+        System.out.println(getPassengersOlderThan(passengerList,age));
 //        countPassengersByGender();
 //        sumFares();
 //        maleSurvivors();
@@ -135,17 +140,32 @@ public class Main {
         return names;
     }
 
-    public static ArrayList<String> getNameContaining(ArrayList<Passenger> passengerList, String targetName)
+    public static ArrayList<Passenger> getNameContaining(ArrayList<Passenger> passengerList, String targetName)
     {
-        ArrayList<String> namesContainingString = new ArrayList<>();
+        ArrayList<Passenger> namesContainingX = new ArrayList<>();
 
         for (int i=0; i< passengerList.size(); i++)
         {
             if (passengerList.get(i).getName().contains(targetName))
             {
-                namesContainingString.add(passengerList.get(i).getName());
+                namesContainingX.add(passengerList.get(i));
             }
         }
-        return namesContainingString;
+        return namesContainingX;
+    }
+
+    public static ArrayList<Passenger> getPassengersOlderThan(ArrayList<Passenger> passengerList, int age)
+    {
+        ArrayList<Passenger> olderThanX = new ArrayList<>();
+
+        for (int i=0; i<passengerList.size(); i++)
+        {
+            if (passengerList.get(i).getAge()>age)
+            {
+                olderThanX.add(passengerList.get(i));
+            }
+        }
+
+        return olderThanX;
     }
 }
