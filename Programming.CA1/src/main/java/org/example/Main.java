@@ -2,6 +2,7 @@ package org.example;
 
 import java.awt.*;
 import java.io. * ;
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Scanner;
@@ -11,7 +12,7 @@ public class Main {
 
         String fileName = "titanic-data-100.csv"; // file should be in the project folder (below pom.xml)
 
-        ArrayList<Passenger> passengerList= new ArrayList<>();
+        ArrayList<Passenger> passengerList = new ArrayList<>();
 
         loadPassengerDataFromFile( passengerList, fileName);
 
@@ -54,7 +55,11 @@ public class Main {
 //        averageAge();
         System.out.println("8:");
         System.out.println(averageAge(passengerList));
+
 //        getPassengersByTicketClass();
+        System.out.println("9:");
+        System.out.println(getPassengersByTicketClass(passengerList, PassengerClass.FIRST));
+
 //        sortPassengersByPassengerId()
 //        sortPassengersByName();
 //        sortPassengersByAgeThenName();
@@ -66,19 +71,6 @@ public class Main {
 //        sortPassengersByTicketNumberStatic();
 //        findPassengerByTicketNumber();
 //        findPassengerByPassengerId();
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -248,6 +240,20 @@ public class Main {
         {
             totalAge=totalAge+passenger.getAge();
         }
-        return totalAge/ passengerList.size();
+        return totalAge/passengerList.size();
+    }
+
+    public static ArrayList<Passenger> getPassengersByTicketClass(ArrayList<Passenger> passengerList, PassengerClass value)
+    {
+        ArrayList<Passenger> passengerenum = new ArrayList<>();
+        for (Passenger passenger : passengerList)
+        {
+            if(passenger.getPassengerClass()==value)
+            {
+                passengerenum.add(passenger);
+            }
+        }
+
+        return passengerenum;
     }
 }
