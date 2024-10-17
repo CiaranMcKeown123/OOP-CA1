@@ -6,6 +6,7 @@ import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Scanner;
+import java.util.Collections;
 
 public class Main {
     public static void main(String[] args) {
@@ -61,6 +62,9 @@ public class Main {
         System.out.println(getPassengersByTicketClass(passengerList, PassengerClass.FIRST));
 
 //        sortPassengersByPassengerId()
+        System.out.println("10:");
+        sortPassengersByPassengerId(passengerList); //fix this before submit, 1,10,100,2... it's not in order
+
 //        sortPassengersByName();
 //        sortPassengersByAgeThenName();
 //        sortPassengersByGenderThenPassengerNumber()
@@ -171,7 +175,6 @@ public class Main {
                 olderThanX.add(passengerList.get(i));
             }
         }
-
         return olderThanX;
     }
 
@@ -185,7 +188,6 @@ public class Main {
                 passengerByGender.add(passengerList.get(i));
             }
         }
-
         return passengerByGender;
     }
 
@@ -196,7 +198,6 @@ public class Main {
         {
             sum = sum + passengerList.get(i).getFare();
         }
-
         return sum;
     }
 
@@ -253,7 +254,16 @@ public class Main {
                 passengerenum.add(passenger);
             }
         }
-
         return passengerenum;
+    }
+
+    public static void sortPassengersByPassengerId(ArrayList<Passenger> passengerList) {
+        Collections.sort(passengerList);
+
+        for (int i=0; i< passengerList.size(); i++)
+        {
+            System.out.println(passengerList.get(i).getPassengerId());
+        }
+
     }
 }
