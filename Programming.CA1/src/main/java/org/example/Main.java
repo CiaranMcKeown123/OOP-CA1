@@ -52,6 +52,8 @@ public class Main {
         System.out.println(ticketOwner(passengerList, ticketNum));
 
 //        averageAge();
+        System.out.println("8:");
+        System.out.println(averageAge(passengerList));
 //        getPassengersByTicketClass();
 //        sortPassengersByPassengerId()
 //        sortPassengersByName();
@@ -237,5 +239,15 @@ public class Main {
             }
         }
         return ticketOwner;
+    }
+
+    public static double averageAge(ArrayList<Passenger> passengerList)
+    {
+        double totalAge=0;
+        for (Passenger passenger : passengerList)
+        {
+            totalAge=totalAge+passenger.getAge();
+        }
+        return totalAge/ passengerList.size();
     }
 }
