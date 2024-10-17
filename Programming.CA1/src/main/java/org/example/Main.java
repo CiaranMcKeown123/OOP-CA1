@@ -63,9 +63,12 @@ public class Main {
 
 //        sortPassengersByPassengerId()
         System.out.println("10:");
-        sortPassengersByPassengerId(passengerList); //fix this before submit, 1,10,100,2... it's not in order
+        System.out.println(sortPassengersByPassengerId(passengerList));
 
 //        sortPassengersByName();
+        System.out.println("11:");
+        System.out.println(sortPassengersByName(passengerList));
+
 //        sortPassengersByAgeThenName();
 //        sortPassengersByGenderThenPassengerNumber()
 //        sortPassengersByFareThenSurvival();
@@ -257,13 +260,20 @@ public class Main {
         return passengerenum;
     }
 
-    public static void sortPassengersByPassengerId(ArrayList<Passenger> passengerList) {
+    public static ArrayList<Passenger> sortPassengersByPassengerId(ArrayList<Passenger> passengerList) {
         Collections.sort(passengerList);
+        ArrayList<Passenger> sortedId = new ArrayList<>();
 
         for (int i=0; i< passengerList.size(); i++)
         {
-            System.out.println(passengerList.get(i).getPassengerId());
+            sortedId.add(passengerList.get(i));
         }
+        return sortedId;
+    }
 
+    public static ArrayList<Passenger> sortPassengersByName(ArrayList<Passenger> passengerList)
+    {
+
+        return passengerList;
     }
 }

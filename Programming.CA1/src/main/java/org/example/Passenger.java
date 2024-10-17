@@ -158,8 +158,8 @@ public class Passenger implements Comparable<Passenger> {
 
     @Override
     public int compareTo(Passenger other) {
-        int passengeridint = Integer.parseInt(passengerId);
-        int idComparison = this.passengerId.compareToIgnoreCase(other.passengerId);
+        int passengerId = Integer.parseInt(this.passengerId);
+        int idComparison = Integer.compare(passengerId, Integer.parseInt(other.passengerId));
         if (idComparison != 0) {
             return idComparison;
         } else {
