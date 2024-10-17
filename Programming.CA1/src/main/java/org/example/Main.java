@@ -46,8 +46,11 @@ public class Main {
         System.out.println("6:");
         System.out.println(Arrays.toString(maleSurvivors(passengerList)));
 
-
 //        ticketOwner();
+        System.out.println("7:");
+        int ticketNum =345763;
+        System.out.println(ticketOwner(passengerList, ticketNum));
+
 //        averageAge();
 //        getPassengersByTicketClass();
 //        sortPassengersByPassengerId()
@@ -221,5 +224,18 @@ public class Main {
             maleSurvivors[i] = maleSurvivorsList.get(i);
         }
         return maleSurvivors;
+    }
+
+    public static ArrayList<Passenger> ticketOwner(ArrayList<Passenger> passengerList, int ticketNum)
+    {
+        ArrayList<Passenger> ticketOwner = new ArrayList<>();
+        for (int i=0; i<passengerList.size(); i++)
+        {
+            if(passengerList.get(i).getTicketNumber().equals(""+ticketNum))
+            {
+                ticketOwner.add(passengerList.get(i));
+            }
+        }
+        return ticketOwner;
     }
 }
