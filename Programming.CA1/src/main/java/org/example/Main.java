@@ -26,6 +26,9 @@ public class Main {
         }
 
 //        getPassengersContainingNames();
+        System.out.println("2:");
+        String targetName ="Rogers";
+        System.out.println(getNameContaining(passengerList,targetName));
 //        getPassengersOlderThan();
 //        countPassengersByGender();
 //        sumFares();
@@ -130,5 +133,19 @@ public class Main {
             names[i] = passengerList.get(i).getName();
         }
         return names;
+    }
+
+    public static ArrayList<String> getNameContaining(ArrayList<Passenger> passengerList, String targetName)
+    {
+        ArrayList<String> namesContainingString = new ArrayList<>();
+
+        for (int i=0; i< passengerList.size(); i++)
+        {
+            if (passengerList.get(i).getName().contains(targetName))
+            {
+                namesContainingString.add(passengerList.get(i).getName());
+            }
+        }
+        return namesContainingString;
     }
 }
