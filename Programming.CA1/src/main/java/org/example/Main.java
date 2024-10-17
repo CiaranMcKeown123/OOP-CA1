@@ -35,8 +35,16 @@ public class Main {
         System.out.println("3:");
         int age=45;
         System.out.println(getPassengersOlderThan(passengerList,age));
+
 //        countPassengersByGender();
+        System.out.println("4:");
+        String gender = "female";
+        System.out.println(countPassengersByGender(passengerList,gender));
+
 //        sumFares();
+        System.out.println("5:");
+        System.out.println(sumFares(passengerList));
+
 //        maleSurvivors();
 //        ticketOwner();
 //        averageAge();
@@ -167,5 +175,30 @@ public class Main {
         }
 
         return olderThanX;
+    }
+
+    public static ArrayList<Passenger> countPassengersByGender(ArrayList<Passenger> passengerList,String gender)
+    {
+        ArrayList<Passenger> passengerByGender = new ArrayList<>();
+        for (int i=0; i<passengerList.size(); i++)
+        {
+            if(passengerList.get(i).getGender().equalsIgnoreCase(gender))
+            {
+                passengerByGender.add(passengerList.get(i));
+            }
+        }
+
+        return passengerByGender;
+    }
+
+    public static double sumFares(ArrayList<Passenger> passengerList)
+    {
+        double sum=0;
+        for (int i=0; i<passengerList.size(); i++)
+        {
+            sum = sum + passengerList.get(i).getFare();
+        }
+
+        return sum;
     }
 }
