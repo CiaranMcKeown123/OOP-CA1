@@ -157,7 +157,6 @@ public class Passenger implements Comparable<Passenger> {
         this.embarkedAt = embarkedAt;
     }
 
-
     @Override
     public int compareTo(Passenger other) {
         int passengerId = Integer.parseInt(this.passengerId);
@@ -168,6 +167,4 @@ public class Passenger implements Comparable<Passenger> {
             return Integer.compare(this.age, other.age);
         }
     }
-
-
     }
