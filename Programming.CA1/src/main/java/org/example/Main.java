@@ -70,6 +70,9 @@ public class Main {
         System.out.println(sortPassengersByName(passengerList));
 
 //        sortPassengersByAgeThenName();
+        System.out.println("12:");
+        System.out.println(sortPassengersByAgeThenName(passengerList));
+
 //        sortPassengersByGenderThenPassengerNumber()
 //        sortPassengersByFareThenSurvival();
 //        sortPassengersByTicketClass()
@@ -262,14 +265,28 @@ public class Main {
 
     public static ArrayList<Passenger> sortPassengersByPassengerId(ArrayList<Passenger> passengerList) {
         Collections.sort(passengerList);
-        return passengerList;
+        ArrayList<Passenger> sortedId = new ArrayList<>();
+        for (Passenger passenger : passengerList)
+        {
+            sortedId=passengerList;
+        }
+        return sortedId;
     }
 
     public static ArrayList<Passenger> sortPassengersByName(ArrayList<Passenger> passengerList)
     {
         Collections.sort(passengerList, new compareToNames());
-        ArrayList<Passenger> sortedId = new ArrayList<>();
+        ArrayList<Passenger> sortedNames = new ArrayList<>();
+        for (Passenger passenger : passengerList)
+        {
+            sortedNames=passengerList;
+        }
+        return sortedNames;
+    }
 
+    public static ArrayList<Passenger> sortPassengersByAgeThenName(ArrayList<Passenger> passengerList)
+    {
+        Collections.sort(passengerList, new compareToNames.compareAgeThenName());
         return passengerList;
     }
 }
