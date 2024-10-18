@@ -262,17 +262,13 @@ public class Main {
 
     public static ArrayList<Passenger> sortPassengersByPassengerId(ArrayList<Passenger> passengerList) {
         Collections.sort(passengerList);
-        ArrayList<Passenger> sortedId = new ArrayList<>();
-
-        for (int i=0; i< passengerList.size(); i++)
-        {
-            sortedId.add(passengerList.get(i));
-        }
-        return sortedId;
+        return passengerList;
     }
 
     public static ArrayList<Passenger> sortPassengersByName(ArrayList<Passenger> passengerList)
     {
+        Collections.sort(passengerList, new compareToNames());
+        ArrayList<Passenger> sortedId = new ArrayList<>();
 
         return passengerList;
     }

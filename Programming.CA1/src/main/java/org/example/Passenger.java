@@ -1,5 +1,7 @@
 package org.example;
 
+import java.util.Comparator;
+
 public class Passenger implements Comparable<Passenger> {
     private String passengerId;    // passenger number
     private int survived;           // 0=false, 1=true
@@ -166,4 +168,6 @@ public class Passenger implements Comparable<Passenger> {
             return Integer.compare(this.age, other.age);
         }
     }
-}
+
+
+    }
